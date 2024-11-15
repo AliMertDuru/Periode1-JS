@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        console wohgfjm
+    </p>
+</body>
+<script>
+    function berekenLeeftijd(geboorteJaar, geboorteMaand, geboorteDag) {
+    // huidige prachtige datum
+    let now = new Date();
+    
+    // Geboortedatum (Maand is 0-indexed, dus 1 wordt februari)
+    let geboorteDatum = new Date(geboorteJaar, geboorteMaand - 1, geboorteDag);
+    
+    // verschil in ms
+    let verschilInMs = now - geboorteDatum;
+    
+    // ms naar jaar
+    let leeftijdInJaren = verschilInMs / (1000 * 60 * 60 * 24 * 365.25);
+    
+    // max 2 decimalen
+    return leeftijdInJaren.toFixed(2);
+}
+
+// zet je leeftijd hier
+let geboorteJaar = 2008;
+let geboorteMaand = 7;
+let geboorteDag = 8;
+
+let leeftijd = berekenLeeftijd(geboorteJaar, geboorteMaand, geboorteDag);
+console.log(`Je bent ${leeftijd} jaar oud.`);
+</script>
+<style>
+    * {
+        background-color: chartreuse;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        font-size: 100px;
+    }
+</style>
+</html>
